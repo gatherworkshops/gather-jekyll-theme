@@ -11,9 +11,9 @@
         <span class="length">{{ course.length }}</span>
         <p>{{ course.description }}</p>
 
-        <!--div class="badge">
-            <img src="{{ site.baseurl }}/media/images/icons/{{ course.name }}.png">
-        </div-->
+        {% if course.standard %}
+            <p>AS-{{ course.standard }}</p>
+        {% endif %}
 
     </a>
 
