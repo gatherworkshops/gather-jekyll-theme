@@ -6,12 +6,19 @@ This theme provides layouts, includes, styles and assets to be used in any Gathe
 ## Projects using this theme
 
 - **Web**
+
   [GitHub Project](github.com/gatherworkshops/web) | [Live Site](gatherworkshops.github.io/web)
+
 - **Python**
+  
   [GitHub Project](github.com/gatherworkshops/python) | [Live Site](gatherworkshops.github.io/python)
+
 - **Arduino**
+  
   [GitHub Project](github.com/gatherworkshops/arduino) | [Live Site](gatherworkshops.github.io/arduino)
+
 - **jQuery**
+  
   [GitHub Project](github.com/gatherworkshops/jquery) | [Live Site](gatherworkshops.github.io/jquery)
 
 
