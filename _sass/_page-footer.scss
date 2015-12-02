@@ -1,0 +1,47 @@
+.page-footer {
+	background: $theme-color-dark;
+	padding: 30px 0;
+	color: rgba(255, 255, 255, 0.5);
+
+	.license-icons {
+		display: block;
+		vertical-align: top;
+
+		a {
+			text-decoration: none;
+			border: none;
+			opacity: 0.8;
+		}
+
+		a:hover {
+			opacity: 1;
+		}
+
+		img {
+			height: 50px;
+		}
+	}
+
+	.license-text {
+		display: block;
+		padding-top: 15px;
+		font-size: 0.8rem;
+	}
+
+	a {
+		color: #FFFFFF;
+	}
+
+	a:hover {
+		color: #FFFFFF;
+	}
+
+	.links a {
+		display: block;
+		color: rgba(255, 255, 255, 0.5);
+
+		&:hover {
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,288 @@
+/**
+ * Gather Workshops theme for reveal.js.
+ * Author: Gather Workshops
+ */
+
+// Default mixins and settings -----------------
+@import "../assets/submodules/revealjs/css/theme/template/mixins";
+@import "../assets/submodules/revealjs/css/theme/template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts -----------------
+@import url("http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic");
+// ---------------------------------------------
+
+
+
+// Override theme settings -----------------
+// (see ../template/settings.scss)
+
+// Background of the presentation
+$backgroundColor: #F3F3DA;
+
+// Primary/body text
+$mainFont: 'Karla', sans-serif;
+$mainFontSize: 1.75em;
+$mainColor: #001E39;
+
+// Headings
+$headingMargin: 0 0 20px 0;
+$headingFont: 'Lunchbox', 'Karla', sans-serif;
+$headingColor: #001E39;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: auto;
+$headingTextTransform: none;
+$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
+$heading1TextShadow: $headingTextShadow;
+
+// Links and actions
+$linkColor: #efad5f;
+$linkColorHover: lighten( $linkColor, 10% );
+
+// Text selection
+$selectionBackgroundColor: #FF5E99;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+	background: $backgroundColor;
+}
+// ---------------------------------------------
+
+
+
+// Create custom variables -------------
+
+$titleTextShadow: 2px 2px 1px darken($theme-color, 20%);
+
+
+// ----------------------------
+
+
+// Write custom hard-coded overrides -----------------
+
+
+.reveal {
+
+	line-height: 1.4;
+	text-align: left;
+	overflow: hidden;
+
+	// normal paragraphs displayed on a slide
+	.slides > section p {
+		margin-top: 0.4em;
+		margin-bottom: 0.8em;
+	}
+
+	pre {
+		width: 100%;
+		margin-bottom: 2em;
+
+		code {
+			padding: 0 10px;
+		}
+
+		&[data-line] code {
+			padding-left: 2em;
+		}
+	}
+
+	.line-highlight {
+		background: rgba(255, 255, 255, 0.7);
+
+		&::before,
+		&[data-end]::before,
+		&[data-end]::after {
+			content: "";
+		}
+	}
+
+	[data-linestyle="delete"] .line-highlight {
+		border-left: 10px solid #D00;
+		background: rgba(255, 0, 0, 0.1);
+	}
+
+	// code block displayed on slides
+	.highlight {
+		  border-radius: 0 0 5px 5px;
+
+		  pre {
+			margin: 0 0;
+			margin-bottom: 1em;
+			font-size: 100%;
+			width: 100%;
+			box-shadow: none;
+
+			code {
+				padding: 10px;
+				font-size: inherit;
+				max-height: none;
+				
+			}
+		}
+	}
+
+	
+
+	// inline code within paragraphs
+	code {
+		background-color: rgba(255,255,255,0.6);
+		padding: 6px;
+	}
+
+	.codepen-embed {
+		display: inline-block;
+		box-sizing: border-box;
+		border: 4px solid #222;
+		width: 100%;
+		max-width: 100%;
+
+		&.title {
+			border: 0;
+			color: #FFF;
+			text-align: left;
+			font-size: 50%;
+			font-weight: bold;
+			background-color: #222;
+			padding: 0px 8px;
+			border-top-radius: 5px;
+		}
+	}
+
+	.slides {
+
+		// all slides
+		&>section {
+			box-sizing: border-box;
+		}
+
+		// normal images displayed on a slide
+		&>section img {
+			margin: 0;
+			border: 0 !important;
+			box-shadow: none !important;
+			background: transparent !important;
+		}
+
+		// overrides for default slides
+		&>.default-slide {
+			text-align: left;
+		}
+
+		// overrides for centered slides
+		&>.centered-slide {
+			text-align: center;
+		}
+
+		&>.info-sheet-slide {
+
+			text-align: left;
+
+			img {
+				float: left;
+				display: block;
+				padding-right: 20px;
+				padding-left: 30px;
+				margin-right: 20px;
+			}
+		}
+
+		
+		// overrides for section title slides
+		&>.title-slide {
+
+		  	color: #DCE3B2;
+			text-shadow: $titleTextShadow;
+
+			h1, h2, h3 {
+				color: #DCE3B2;
+				text-shadow: $titleTextShadow;
+			}
+		}
+
+		.flex-list {
+			display: flex;
+			list-style-type: none;
+
+			>li {
+				flex: 1;
+				text-align: center;
+				border-right: 1px dotted rgba(0, 0, 0, 0.3);
+				padding: 20px 0;
+				font-size: 70%;
+				line-height: 120%;
+
+				strong {
+					font-size: 120%;
+					line-height: 150%;
+				}
+
+				&:last-of-type {
+					border-right: none;
+				}
+			}
+		}
+
+	}
+
+}
+
+.reveal p.checkpoint {
+	background: rgba(255, 200, 180, 0.5);
+	border: 1px solid orange;
+	padding: 10px 10px 12px 20px;
+	border-radius: 5px;
+	text-align: left;
+	margin-top: 20px !important;
+	display: inline-block;
+	max-width: 100%;
+
+	&:hover {
+		&::after {
+			background: white;
+		}
+	}
+
+	&::after {
+		content: "Done!";
+		border: 1px solid gray;
+		background: rgba(255, 255, 255, 0.7);
+		font-size: 70%;
+		box-sizing: border-box;
+		border-radius: 5px;
+		height: 100%;
+		float: right;
+		margin-left: 20px;
+		width: 5em;
+		text-align: center;
+	}
+
+	&.checked {
+		background: rgba(180, 255, 200, 0.5);
+		border-color: green;
+
+		&::after {
+			content: "Great!";
+		}
+	}
+}
+
+.reveal .controls div {
+
+	opacity: 0.15;
+
+	&.enabled {
+		opacity: 0.8;
+	}
+}
+
+// ---------------------------------------------
+
+
+
+// Theme template ------------------------------
+@import "../assets/submodules/revealjs/css/theme/template/theme";
+// ---------------------------------------------

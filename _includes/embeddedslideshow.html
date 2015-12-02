@@ -1,0 +1,44 @@
+<section class="slideshow flex-container">
+	<div class="container">
+
+
+		<!-- slideshow -->
+		<div class="row with-border">
+
+			<!-- actual slides in iframe -->
+			<div class="col-md-8 slideshow">
+				<div class="embed-responsive embed-responsive-4by3">
+					<iframe id="slideshow" width="800" height="600" scrolling="no" src="slideshow.html">
+					</iframe>
+				</div>
+			</div>
+
+			<!-- accompanying slide explanatory text -->
+			<div class="col-md-4">
+				<div class="slide-notes"></div>
+				<div class="nav-buttons"></div>
+			</div>
+
+		</div><!-- .row -->
+
+
+		<!-- chapter navigation -->
+		<div class="templates">
+
+			{% if page.previous %}
+				<a class="previous-btn" href="../{{ page.previous }}">
+					&laquo; Previous Chapter: {{ page.previoustitle }}
+				</a>
+			{% endif %}
+
+			{% if page.next %}
+				<a class="next-btn" href="../{{ page.next }}">
+					Next Chapter: {{ page.nexttitle }} &raquo;
+				</a>
+			{% endif %}
+
+		</div><!-- templates -->
+
+
+	</div><!-- .container -->
+</section><!-- .slideshow.container -->

@@ -1,0 +1,92 @@
+/* tile-like list of links to individual chapters */
+.chapter-links {
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.row {
+		padding: 15px 0;
+		border-bottom: 1px solid rgba(150, 0, 0, 0.2);
+	}
+
+	/* remove bottom border from last row */
+	> div:last-of-type {
+		border: none;
+	}
+
+	.break {
+		font-size: 3em;
+		font-family: "Lunchbox";
+		text-align: center;
+	}
+
+}
+
+/* the tile block */
+.tile-link {
+
+	a {
+		display: block;
+		border: 1px solid white;
+		border-radius: 3px;
+		overflow: hidden;
+		margin-top: 70px;
+		margin-bottom: 20px;
+		background-color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+		text-align: center;
+		color: #666;
+	}
+
+	.header-image {
+		width: 100%;
+	}
+
+	.title {
+		display: block;
+		font-weight: bold;
+		font-size: 1.8em;
+		font-family: "Lunchbox";
+		margin-top: 15px;
+	}
+
+	.length {
+		font-size: 1em;
+	}
+
+	.subtitle {
+		display: block;
+		font-style: italic;
+		font-size: 1em;
+	}
+
+	p {
+		text-align: center;
+		margin-top: 10px;
+		font-size: 14px;
+	}
+
+	.badge {
+
+		width: 120px;
+		height: 120px;
+		border-radius: 100%;
+		border: 8px solid #FFFFFF;
+		overflow: hidden;
+		margin-top: -60px;
+		background-image: linear-gradient(to top, $theme-color 0px, lighten($theme-color, 20%) 100%);
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+		position: relative;
+
+		img {
+			width: 70%;
+			height: 70%;
+			position: absolute;
+			top: 15%;
+			left: 15%;
+			opacity: 0.8;
+		}
+	}
+
+}

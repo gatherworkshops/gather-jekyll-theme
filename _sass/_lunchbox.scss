@@ -1,0 +1,33 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2805630, 2014-05-03T22:37:27-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: LunchBox Bold by Kimmy Design
+ * URL: http://www.myfonts.com/fonts/kimmy/lunch-box/bold/
+ * Copyright: Copyright (c) 2013 by Kimmy Design. All rights reserved.
+ * Licensed pageviews: 20,000
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2805630
+ *
+ * © 2014 MyFonts Inc
+*/
+
+@import url("//hello.myfonts.net/count/2acf7e");
+
+@font-face {
+	font-family: 'LunchBox';
+	font-weight: bold;
+	font-style: normal;
+	src: url('#{$baseurl}/theme/assets/fonts/2ACF7E_0_0.eot');
+	src: url('#{$baseurl}/theme/assets/fonts/2ACF7E_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('#{$baseurl}/theme/assets/fonts/2ACF7E_0_0.woff') format('woff'),
+		 url('#{$baseurl}/theme/assets/fonts/2ACF7E_0_0.ttf') format('truetype'),
+		 url('#{$baseurl}/theme/assets/fonts/2ACF7E_0_0.svg#wf') format('svg');
+}

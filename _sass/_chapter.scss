@@ -1,0 +1,33 @@
+body.chapter {
+	background-color: $theme-color-dark;
+
+	.slideshow {
+		background-color: #f3f3da;
+	}
+}
+
+.content-panel {
+
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 3px;
+	padding: 30px;
+
+	h2 {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	p {
+		max-width: 650px;
+	}
+
+	.difficulty {
+		text-transform: uppercase;
+	}
+
+	&>img {
+		float: right;
+	}
+}

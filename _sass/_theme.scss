@@ -1,0 +1,22 @@
+/**
+ * This is the only SCSS file which should contain
+ * project-specific styles.
+ *
+ */
+
+
+$theme-color-dark: darken($theme-color, 10%);
+$theme-color-light: lighten($theme-color, 10%);
+
+$bg-gradient: linear-gradient(to bottom, $theme-color-dark 0px, $theme-color-light 100%);
+
+$heading-color: #333;
+
+$link-color: $theme-color;
+$link-hover: $theme-color-light;
+$link-active: $theme-color;
+$link-visited: $theme-color;
+
+$first-paragraph-color: #1A84CD;
+
+

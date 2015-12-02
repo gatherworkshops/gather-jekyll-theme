@@ -1,0 +1,116 @@
+@media (max-width: 600px) {
+  #mainNavigation {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 1900px) {
+  #mainNavigation {
+    font-size: 2.2vh;
+  }
+}
+
+
+@media (min-width: 1901px) {
+  #mainNavigation {
+    font-size: 18px;
+  }
+}
+
+#mainNavigation {
+
+ 	background: #041221;
+ 	border: none;
+
+ 	.avatar {
+ 		height: 1.5em;
+ 		border-radius: 3px;
+ 		margin-right: 3px;
+ 		margin-top: -3px;
+ 	}
+
+ 	.title {
+ 		color: rgba(255, 255, 255, 0.4);
+ 		padding-left: 8px;
+ 	}
+
+ 	.navbar-brand {
+ 		color: #fff;
+ 		font-size: 120%;
+ 		padding: 0;
+ 		margin: 15px 0 11px 0;
+ 		height: auto;
+ 		vertical-align: text-bottom;
+ 	}
+
+
+ 	.chapter-switcher .dropdown {
+
+ 		font-size: 120%;
+
+ 		>a {
+ 			background-color: transparent;
+ 			padding-left: 8px;
+ 		padding-right: 8px;
+ 		}
+
+ 		&.open>a {
+ 			background-color: #333;
+ 		}
+
+ 		// open and close button
+ 		.dropdown-toggle {
+
+ 			color: rgba(255, 255, 255, 0.4);
+
+ 			&:hover {
+ 				background-color: #333;
+ 				color: white;
+ 			}
+
+ 		}
+
+ 		// chapters menu, when visible
+ 		.dropdown-menu {
+ 			background-color: #041221;
+
+ 			a {
+ 				color: rgba(255, 255, 255, 0.4);
+ 			}
+
+ 			a:hover,
+ 			a:focus {
+ 				background-color: #333;
+ 				color: white;
+ 			}
+ 		}
+
+ 	}
+
+
+ 	.site-nav {
+
+ 		a {
+ 			font-family: Lunchbox,"Helvetica Neue",Arial,sans-serif;
+			font-size: 150%;
+			color: #dce2b1;
+			transition: all 0.2s ease 0s;
+ 		}
+
+ 		a:hover {
+ 			transform: scale(1.2) translateZ(0px);
+ 		}
+
+ 		.active a {
+ 			color: #eead5e;
+			background: none;
+			border-bottom: 4px solid #eead5e;
+ 		}
+
+ 		.active a:hover {
+			transform: none;
+		}
+
+ 	}
+}

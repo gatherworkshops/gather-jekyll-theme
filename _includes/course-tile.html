@@ -1,0 +1,20 @@
+<div class="tile-link col-md-4">
+
+	{% if course.published == false %}
+	<a style="opacity:0.5;">
+    {% else %}
+    <a href="{{ site.baseurl }}/courses/{{ course.name }}">
+    {% endif %}
+
+        <img class="header-image" src="{{ site.baseurl }}/media/images/tiles/{{ course.name }}.jpg">
+        <span class="title">{{ course.title }}</span>
+        <span class="length">{{ course.length }}</span>
+        <p>{{ course.description }}</p>
+
+        <!--div class="badge">
+            <img src="{{ site.baseurl }}/media/images/icons/{{ course.name }}.png">
+        </div-->
+
+    </a>
+
+</div>
