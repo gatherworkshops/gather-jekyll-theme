@@ -30,6 +30,47 @@ To create a new Jekyll site which uses this theme:
 6. Start your server
 
 
+## Recommended Jekyll Config
+
+Here is an example of a typical `_config.yml` for a Jekyll site using this theme:
+
+```
+name: Gather Workshops
+
+baseurl: "/"
+theme_assets: "/theme/assets"
+theme_images: "/theme/assets/images"
+course_images: "/media/images"
+
+markdown: kramdown
+exclude: ["node_modules", "Gemfile", "Gruntfile.js", "package.json", "README.md"]
+
+kramdown:
+  input: GFM
+  enable_coderay: false
+
+# Where things are
+source:       .
+destination:  ./_site
+layouts_dir:  ./theme/_layouts
+includes_dir: ./theme/_includes
+sass:
+    sass_dir: ./theme/_sass
+
+# custom collections
+collections:
+  assets:
+    output: true
+  courses:
+    output: true
+    layout: chapter
+
+
+# theme
+themecolor: "#466f1b"
+
+```
+
 ## Suggested site structure
 
 This theme is intended to be used for a site which consists of:
