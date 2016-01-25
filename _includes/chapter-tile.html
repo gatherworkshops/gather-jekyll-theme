@@ -1,3 +1,8 @@
+{% capture chapter_tile_image %}
+    assets/tiles/{{ chapter.name }}.jpg
+{% endcapture %}
+
+
 <div class="tile-link col-md-4">
 
 	{% if chapter.published == false %}
@@ -6,7 +11,7 @@
     <a href="{{ chapter.name }}.html">
     {% endif %}
 
-        <img class="header-image" src="{{ site.baseurl }}/media/images/tiles/{{ chapter.name }}.jpg">
+        <img class="header-image" src="{{ chapter_tile_image }}">
         <span class="title">{{ chapter.title }}</span>
         <p>{{ chapter.description }}</p>
 
