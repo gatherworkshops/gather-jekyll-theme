@@ -1,12 +1,21 @@
+{% capture course_url %} 
+    {{ site.baseurl }}/courses/{{ course.name }}
+{% endcapture %}
+
+{% capture course_tile_image %}
+    {{ site.baseurl }}/courses/{{ course.name }}/assets/tiles/{{ course.name }}.jpg
+{% endcapture %}
+
+
 <div class="tile-link col-md-4">
 
 	{% if course.published == false %}
 	<a style="opacity:0.5;">
     {% else %}
-    <a href="{{ site.baseurl }}/courses/{{ course.name }}">
+    <a href="{{ course_url }}">
     {% endif %}
 
-        <img class="header-image" src="{{ site.baseurl }}/media/images/tiles/{{ course.name }}.jpg">
+        <img class="header-image" src="{{ course_tile_image }}">
         <span class="title">{{ course.title }}</span>
         <span class="length">{{ course.length }}</span>
         <p>{{ course.description }}</p>
