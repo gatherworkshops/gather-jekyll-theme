@@ -125,6 +125,19 @@ $titleTextShadow: 2px 2px 1px darken($theme-color, 20%);
 		}
 	}
 
+	// makes code block with this class much bigger
+	// and clearer. best for use on very short blocks.
+
+	.big-code{
+		font-size: 26px;
+    	padding: 20px 0;
+	}
+
+	pre.language-css {
+		width: 80%;
+		margin: 0 auto;
+	}
+
 	
 
 	// inline code within paragraphs

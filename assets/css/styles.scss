@@ -20,9 +20,9 @@ $theme-color: {{site.themecolor}};
 
 @import 'page-navigation';
 @import 'page-header';
-@import 'page-content';
 @import 'page-footer';
 
+@import 'course';
 @import 'chapter';
 @import 'feedback';
 @import 'chapter-links';

@@ -1,0 +1,32 @@
+body.course-page {
+
+	ol.chapter-list {
+
+		list-style-type: none;
+
+		li {
+
+			margin: 15px 0;
+
+			a {
+				display: flex;
+				align-items: stretch;
+				background: rgba(255, 255, 255, 0.7);
+				border: 1px solid white;
+				border-radius: 3px;
+				overflow: hidden;
+			}
+
+			a:hover {
+				background: rgba(255, 255, 255, 0.9);
+			}
+
+			.chapter-info {
+				padding: 10px;
+			}
+		}
+
+	}
+
+}
+

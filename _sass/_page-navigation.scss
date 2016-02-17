@@ -1,27 +1,30 @@
 @media (max-width: 600px) {
-  #mainNavigation {
+  #page-navigation {
     font-size: 12px;
   }
 }
 
 
 @media (max-width: 1900px) {
-  #mainNavigation {
+  #page-navigation {
     font-size: 2.2vh;
   }
 }
 
 
 @media (min-width: 1901px) {
-  #mainNavigation {
+  #page-navigation {
     font-size: 18px;
   }
 }
 
-#mainNavigation {
-
+#page-navigation {
+  position: fixed;
+  width: 100%;
  	background: #041221;
  	border: none;
+  padding: 0 15px;
+  z-index: 999;
 
  	.avatar {
  		height: 1.5em;

@@ -1,0 +1,46 @@
+---
+bodyclass: course-page
+---
+	{% include head.html %}
+	{% include pagenavigation.html %}
+
+
+	<div class="page-content">
+
+		{% include pageheader.html %}
+		
+
+		<div class="container">
+			<div class="row">
+
+				<ol class="chapter-list col-md-10 col-md-offset-1">
+
+				    {% for chapter in page.chapters %}
+
+				        {% include chapter-item.html %}
+
+				    {% endfor %}
+
+				</ol>
+
+			</div>
+		</div>
+
+
+		{% include pagefooter.html %}
+	
+	</div><!-- .page-content -->
+
+
+	{% include foot.html %}
+
+
+
+
+
+
+	
+
+	
+
+	
