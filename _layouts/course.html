@@ -1,38 +1,38 @@
----
-bodyclass: course-page
----
-	{% include head.html %}
-	{% include pagenavigation.html %}
+{% assign bodyclass = "course-page" %}
 
 
-	<div class="page-content">
-
-		{% include pageheader.html %}
-		
-
-		<div class="container">
-			<div class="row">
-
-				<ol class="chapter-list col-md-10 col-md-offset-1">
-
-				    {% for chapter in page.chapters %}
-
-				        {% include chapter-item.html %}
-
-				    {% endfor %}
-
-				</ol>
-
-			</div>
-		</div>
+{% include head.html %}
+{% include pagenavigation.html %}
 
 
-		{% include pagefooter.html %}
+<div class="page-content">
+
+	{% include pageheader.html %}
 	
-	</div><!-- .page-content -->
+
+	<div class="container">
+		<div class="row">
+
+			<ol class="chapter-list col-md-10 col-md-offset-1">
+
+			    {% for chapter in page.chapters %}
+
+			        {% include chapter-item.html %}
+
+			    {% endfor %}
+
+			</ol>
+
+		</div>
+	</div>
 
 
-	{% include foot.html %}
+	{% include pagefooter.html %}
+
+</div><!-- .page-content -->
+
+
+{% include foot.html %}
 
 
 

@@ -6,7 +6,7 @@ body.course-page {
 
 		li {
 
-			margin: 15px 0;
+			margin: 20px 0;
 
 			a {
 				display: flex;
@@ -15,10 +15,15 @@ body.course-page {
 				border: 1px solid white;
 				border-radius: 3px;
 				overflow: hidden;
+				text-decoration: none;
 			}
 
 			a:hover {
 				background: rgba(255, 255, 255, 0.9);
+			}
+
+			h2.title {
+				margin: 0;
 			}
 
 			.chapter-info {
