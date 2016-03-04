@@ -1,19 +1,56 @@
 <nav id="page-navigation">
 
 
-
-
-    <!-- branding - always visible. links to home page -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
+    <!-- branding and strand name - always visible. links to home page -->
+    <a class="strand-name navbar-brand" href="{{ site.baseurl }}/">
         <img class="avatar" src="{{ site.baseurl }}/theme/assets/images/gw-avatar.png">
-        {{ site.name }} | {{ page.title}} 
+        {{ site.name }} 
     </a>
+
+
+
+    <!-- vertical divider bar, if we can move this to CSS that'd be ace -->
+    <p class="divider-bar navbar-text invisible">
+        |
+    </p>
+
+
+
+    <!-- page name or course name depending on context -->
+    {% if page.layout == "chapter" %}
+
+        <!-- course name has to be set by jQuery from JSON data -->
+        <a class="course-name navbar-text invisible" href="#"></a>
+
+    {% else %}
+
+        <!-- page name should always be available from page data -->
+        <p class="page-name navbar-text invisible">
+            {{ page.title}} 
+        </p>
+
+    {% endif %}
+
+
+
+    <!-- chapter dropdown available if this page is a chapter -->
+    {% if page.layout == "chapter" %}
+        
+        <ul class="chapter-nav nav navbar-nav invisible">
+        <li class="dropdown">
+          <a href="#" class="chapter-name dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.title }} <span class="caret"></span></a>
+          <ul class="chapters dropdown-menu">
+          </ul>
+        </li>
+      </ul>
+
+    {% endif %}
 
 
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse navbar-right">
       <ul class="site-nav nav navbar-nav">
 
         {% for link in site.data.navigation %}
@@ -35,6 +72,51 @@
       </ul>
 
     </div><!-- /.navbar-collapse -->
+
+
+
+    <script>
+        // generates the chapter dropdown menu from a json file
+        $(document).ready( function() {
+
+            // updates the nav with data fetched from the course's JSON.
+            // we do this via JSON to avoid the need for repetition of
+            // sitemap or coursemap data in a place other than the course's
+            // root directory, as Jekyll can only read custom data from the
+            // _data dir which is not ideal.
+            function generateMenu(course) {
+
+                // find all elements we will modify
+                var navBar = $('#page-navigation');
+                var courseName = navBar.find('.course-name');
+                var chapterDropdown = navBar.find('.dropdown-menu');
+
+                // update the course name in the nav bar
+                courseName.html(course.title);
+
+                // create and append a menu item for each chapter
+                $.each(course.chapters, function(index, chapter){
+                    var chapterLink = $(
+                        '<li>' +
+                            '<a href="' + this.name + '">' +
+                                this.title +
+                            '</a>' +
+                        '</li>'
+                    );
+                    chapterDropdown.append(chapterLink);
+                });
+
+                // show all hidden nav elements
+                navBar
+                    .find('.invisible')
+                    .removeClass('invisible');
+            }
+
+            // go get the course data
+            $.get( "index.json", generateMenu);
+
+        });
+    </script>
 
 
 </nav>

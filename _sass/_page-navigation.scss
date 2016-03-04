@@ -1,119 +1,118 @@
-@media (max-width: 600px) {
-  #page-navigation {
-    font-size: 12px;
-  }
-}
-
-
-@media (max-width: 1900px) {
-  #page-navigation {
-    font-size: 2.2vh;
-  }
-}
-
-
-@media (min-width: 1901px) {
-  #page-navigation {
-    font-size: 18px;
-  }
-}
-
 #page-navigation {
-  position: fixed;
-  width: 100%;
- 	background: #041221;
- 	border: none;
-  padding: 0 15px;
-  z-index: 999;
 
- 	.avatar {
- 		height: 1.5em;
- 		border-radius: 3px;
- 		margin-right: 3px;
- 		margin-top: -3px;
- 	}
+  background: #041221;
+  padding: 0 0.3em;
 
- 	.title {
- 		color: rgba(255, 255, 255, 0.4);
- 		padding-left: 8px;
- 	}
+  .strand-name,
+  .divider-bar,
+  .page-name,
+  .course-name,
+  .chapter-name {
+    display: inline-block;
+    margin: 0;
+    padding: 0.8em 0.2em;
+    line-height: inherit;
+  }
 
- 	.navbar-brand {
- 		color: #fff;
- 		font-size: 120%;
- 		padding: 0;
- 		margin: 15px 0 11px 0;
- 		height: auto;
- 		vertical-align: text-bottom;
- 	}
+  .strand-name {
 
+    color: #fff;
 
- 	.chapter-switcher .dropdown {
+    &:hover {
+      color: #DCE3B2;
+      background: transparent;
+    }
 
- 		font-size: 120%;
+    img {
+      float: left;
+      height: 1.8em;
+      margin-right: 0.4em;
+      margin-top: -0.2em;
+    }
 
- 		>a {
- 			background-color: transparent;
- 			padding-left: 8px;
- 		padding-right: 8px;
- 		}
+  }
 
- 		&.open>a {
- 			background-color: #333;
- 		}
+  .page-name,
+  .divider-bar,
+  .course-name {
+    color: #fff;
+    text-decoration: none;
+  }
 
- 		// open and close button
- 		.dropdown-toggle {
+  .course-name {
 
- 			color: rgba(255, 255, 255, 0.4);
+    &:hover {
+      color: #DCE3B2;
+    }
 
- 			&:hover {
- 				background-color: #333;
- 				color: white;
- 			}
+  }
 
- 		}
+  .chapter-name {
+    padding-left: 10px;
+    padding-right: 10px;
 
- 		// chapters menu, when visible
- 		.dropdown-menu {
- 			background-color: #041221;
+    &:hover {
+      color: #DCE3B2;
+      background: transparent;
+    }
 
- 			a {
- 				color: rgba(255, 255, 255, 0.4);
- 			}
+    &:focus {
+      background: transparent;
+    }
+  }
 
- 			a:hover,
- 			a:focus {
- 				background-color: #333;
- 				color: white;
- 			}
- 		}
+  .dropdown.open .chapter-name {
+    color: #DCE3B2;
+    background: transparent;
+  }
 
- 	}
+  .dropdown-menu {
+    font-size: inherit;
 
+    li {
+      border-top: 1px solid #ddd;
+    }
 
- 	.site-nav {
+    li:first-of-type {
+      border: none;
+    }
 
- 		a {
- 			font-family: Lunchbox,"Helvetica Neue",Arial,sans-serif;
-			font-size: 150%;
-			color: #dce2b1;
-			transition: all 0.2s ease 0s;
- 		}
+    li a {
+      padding: 8px 15px;
+      min-width: 200px;
+    }
+  }
 
- 		a:hover {
- 			transform: scale(1.2) translateZ(0px);
- 		}
-
- 		.active a {
- 			color: #eead5e;
-			background: none;
-			border-bottom: 4px solid #eead5e;
- 		}
-
- 		.active a:hover {
-			transform: none;
-		}
-
- 	}
 }
+
+
+
+/*
+
+// old site nav links styling in case they make a comeback
+
+.site-nav {
+
+    a {
+      font-family: Lunchbox,"Helvetica Neue",Arial,sans-serif;
+      font-size: 150%;
+      color: #dce2b1;
+      transition: all 0.2s ease 0s;
+    }
+
+    a:hover {
+      transform: scale(1.2) translateZ(0px);
+    }
+
+    .active a {
+      color: #eead5e;
+      background: none;
+      border-bottom: 4px solid #eead5e;
+    }
+
+    .active a:hover {
+      transform: none;
+    }
+
+  }
+*/
