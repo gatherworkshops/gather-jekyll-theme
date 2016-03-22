@@ -19,7 +19,9 @@
 		markdownify }}
 
 <aside class="notes">
-{{ slide.notes }}
+{{ slide.notes | 
+		replace: '[[BASE_URL]]', site.baseurl |
+		markdownify }}
 </aside>
 
 </section>
