@@ -1,5 +1,6 @@
-/* tile-like list of links to individual chapters */
-.chapter-links {
+/* tile-like list of links to individual chapters and courses */
+.chapter-links,
+.course-links {
 
 	&.row {
 		padding: 30px 0;
@@ -17,6 +18,10 @@
 		text-align: center;
 	}
 
+}
+
+.chapter-links .header-image {
+	display: none; /* hide all chapter images cos we have none */
 }
 
 /* the tile block */
