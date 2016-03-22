@@ -1,0 +1,97 @@
+.reveal .slides {
+
+	// overrides for default slides
+	&>.default-slide {
+		text-align: left;
+	}
+
+	// overrides for centered slides
+	&>.centered-slide {
+		text-align: center;
+	}
+
+	&>.info-sheet-slide {
+
+		text-align: left;
+
+		img {
+			float: left;
+			display: block;
+			padding-right: 20px;
+			padding-left: 30px;
+			margin-right: 20px;
+		}
+	}
+
+	
+	// overrides for section title slides
+	&>.title-slide {
+
+	  	color: #DCE3B2;
+		text-shadow: $titleTextShadow;
+
+		h1, h2, h3 {
+			color: #DCE3B2;
+			text-shadow: $titleTextShadow;
+		}
+	}
+
+
+	/* 
+	slide with an iframe displaying 
+	demo output 
+	*/
+	&>.demo {
+
+	    height: 100%;
+	    width: 100%;
+	    top: -50% !important;
+	    left: -50% !important;
+	    padding: 0;
+	    text-align: left;
+	    overflow: visible;
+
+	    iframe {
+	    	float: left;
+	    	height: 100%;
+	    	max-height: 100%;
+	    	margin-right: 30px;
+	    	width: 50%;
+	    	box-shadow: 2px 2px 2px rgba(0,0,0, 0.3);
+	    }
+
+	    h2 {
+	    	margin-top: 50px;
+	    }
+	}
+
+
+	/*
+	slide with a code block displaying multiple
+	changes in a long piece of code
+	*/
+	&>.long-code {
+
+	    height: 100%;
+	    width: 100%;
+	    top: -50% !important;
+	    left: -50% !important;
+		padding: 0;
+	    text-align: left;
+	    overflow: visible;
+
+	    pre {
+	    	float: left;
+	    	height: 100%;
+	    	max-height: 100%;
+	    	margin-right: 30px;
+	    	width: 50%;
+	    }
+
+	    h2 {
+	    	margin-top: 50px;
+	    }
+
+	}
+
+}

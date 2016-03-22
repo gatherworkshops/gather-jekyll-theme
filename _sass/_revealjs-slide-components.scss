@@ -1,0 +1,79 @@
+.reveal .slides {
+
+	// hand-written components here only.
+	// for code block styles see prism-customisation.
+
+	/*
+	displays a list of items horizontally
+	across the slide
+	*/
+	.flex-list {
+		display: flex;
+		list-style-type: none;
+
+		>li {
+			flex: 1;
+			text-align: center;
+			border-right: 1px dotted rgba(0, 0, 0, 0.3);
+			padding: 20px 10px;
+			font-size: 70%;
+			line-height: 120%;
+
+			strong {
+				font-size: 120%;
+				line-height: 150%;
+			}
+
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+	}
+
+
+	/*
+	a paragraph which can be clicked to confirm that
+	the student has completed the task. flicks to the
+	next slide after a brief pause.
+	*/
+	p.checkpoint {
+		background: rgba(255, 200, 180, 0.5);
+		border: 1px solid orange;
+		padding: 10px 10px 12px 20px;
+		border-radius: 5px;
+		text-align: left;
+		margin-top: 20px !important;
+		display: inline-block;
+		max-width: 100%;
+		font-size: 80%;
+
+		&:hover {
+			&::after {
+				background: white;
+			}
+		}
+
+		&::after {
+			content: "Done!";
+			border: 1px solid gray;
+			background: rgba(255, 255, 255, 0.7);
+			font-size: 70%;
+			box-sizing: border-box;
+			border-radius: 5px;
+			height: 100%;
+			float: right;
+			margin-left: 20px;
+			width: 5em;
+			text-align: center;
+		}
+
+		&.checked {
+			background: rgba(180, 255, 200, 0.5);
+			border-color: green;
+
+			&::after {
+				content: "Great!";
+			}
+		}
+	}
+}

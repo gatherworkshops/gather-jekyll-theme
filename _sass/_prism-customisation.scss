@@ -1,0 +1,67 @@
+pre[class*="language-"] {
+	width: 100%;
+	padding: 20px 0;
+	margin-bottom: 1em;
+	background-image: none;
+
+	// makes code block with this class much bigger
+	// and clearer. best for use on very short blocks.
+	&.big-code{
+		code {
+			font-size: 26px;
+		}
+	}
+
+	// makes the width of the code block size to fit
+	// around the content to minimise whitespace
+	&.fit-code {
+		display: inline-block;
+		width: auto;
+		min-width: 50%;
+
+		code {
+			display: inline-block;
+			padding-right: 4em;
+		}
+	}
+
+	// css rarely has long lines, so make the block smaller
+	// and centered for aesthetic reasons
+	&.language-css {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	// don't let the code sit right against the edges
+	// of the pre block
+	code {
+		padding: 0 10px;
+	}
+
+	// prism prevents top and bottom padding on blocks
+	// which use line numbering or highlighting, but we
+	// want to keep the padding in all scenarios.
+	&[data-line] {
+		padding-top: inherit;
+		padding-bottom: inherit;
+	}
+
+	// add a transparent white overlay to "fade out" 
+	// all highlighted lines.
+	.line-highlight {
+		background: rgba(white, .7);
+
+		&::before,
+		&[data-end]::before,
+		&[data-end]::after {
+			content: "";
+		}
+	}
+
+	// used for the rare cases where we want to show
+	// students which lines to delete
+	&[data-linestyle="delete"] .line-highlight {
+		border-left: 10px solid $theme-color-light;
+		background: rgba(255, 0, 0, 0.1);
+	}
+}
