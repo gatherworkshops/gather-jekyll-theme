@@ -29,6 +29,13 @@ window.Sidenotes || (window.Sidenotes = function (Reveal) {
 	    copyNotes();
 	} );
 
+	function checkNotesState() {
+		var notesOn = Cookies.get('sidenotes');
+		notesOn = (notesOn == "true");
+		
+		setNotesVisibility(notesOn);
+	}
+
 	/*
 	Copy notes to visible notes section
 	*/
@@ -38,11 +45,25 @@ window.Sidenotes || (window.Sidenotes = function (Reveal) {
 	    $('.sidenotes .content').html(notes);
 	}
 
-	/*
-	Toggle sidenotes visibility
-	*/
-	function showNotes() {
-		$(".sidenotes").parent().toggleClass("with-notes");
+
+	function toggleNotesVisibility() {
+		var slideshow = $(".sidenotes").parent();
+
+		slideshow.toggleClass("with-notes");
+		Cookies.set('sidenotes', slideshow.hasClass("with-notes"));
+	}
+
+
+	function setNotesVisibility(notesOn) {
+		var slideshow = $(".sidenotes").parent();
+
+		if(notesOn == true) {
+			slideshow.addClass("with-notes");
+		} else {
+			slideshow.removeClass("with-notes");
+		}
+
+		Cookies.set('sidenotes', slideshow.hasClass("with-notes"));
 	}
 
 	/*
@@ -50,7 +71,7 @@ window.Sidenotes || (window.Sidenotes = function (Reveal) {
 	*/
 	$(document).keypress(function(e) {
 	  	if(e.which == 13) {
-	  		showNotes();
+	  		toggleNotesVisibility();
 	  	}
 	});
 
