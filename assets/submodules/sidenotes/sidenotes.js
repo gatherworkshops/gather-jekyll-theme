@@ -14,65 +14,106 @@ License: MIT license (see LICENSE.md)
 
 window.Sidenotes || (window.Sidenotes = function (Reveal) {
 
-	/*
-	Show notes on slideshow load
-	*/
-	Reveal.addEventListener( 'ready', function( event ) {
-		copyNotes();
-		checkNotesState();
-	} );
+	var sidenotesOpen,
+		slideshow;
+
+
+	// Reveal event bindings
+	Reveal.addEventListener('ready', init);
+	Reveal.addEventListener('slidechanged', updateNotes);
+
+
+	// document event bindings
+	$(document).keypress( onKeypress );
+
+
 
 	/*
-	Update notes on slide changed
+	Only set up Sidenotes once Reveal is ready
 	*/
-	Reveal.addEventListener( 'slidechanged', function( event ) {
-	    copyNotes();
-	} );
-
-	function checkNotesState() {
-		var notesOn = Cookies.get('sidenotes');
-		notesOn = (notesOn == "true");
-		
-		setNotesVisibility(notesOn);
+	function init(event) {
+		getSlideshow();
+		updateNotes();
+		loadCookies();
+		layout();
 	}
+
+
+	/*
+	Get a reference to the slideshow's parent container, 
+	which is where we will add the sidenotes.
+	*/
+	function getSlideshow() {
+		slideshow = $(".sidenotes").parent();
+	}
+
 
 	/*
 	Copy notes to visible notes section
 	*/
-	function copyNotes() {
+	function updateNotes() {
 		slide = Reveal.getCurrentSlide();
 		notes = $(slide).find('aside.notes').html();
 	    $('.sidenotes .content').html(notes);
 	}
 
 
-	function toggleNotesVisibility() {
-		var slideshow = $(".sidenotes").parent();
-
-		slideshow.toggleClass("with-notes");
-		Cookies.set('sidenotes', slideshow.hasClass("with-notes"));
+	/*
+	Check cookies for whether the sidenotes were previously open
+	*/
+	function loadCookies() {
+		sidenotesOpen = Cookies.get('sidenotes') == 'true';
 	}
 
 
-	function setNotesVisibility(notesOn) {
-		var slideshow = $(".sidenotes").parent();
+	/*
+	Save sidenotes state in cookies to allow persistence
+	on other pages.
+	*/
+	function setCookies() {
+		Cookies.set('sidenotes', sidenotesOpen);
+	}
 
-		if(notesOn == true) {
+
+	/*
+	Fairly self-explanatory...
+	*/
+	function toggleSidenotes() {
+		
+		sidenotesOpen = !sidenotesOpen;
+		layout();
+	}
+
+
+	/*
+	Use the stored state to show or hide the sidenotes as needed
+	*/
+	function layout() {
+
+		if(sidenotesOpen) {
 			slideshow.addClass("with-notes");
 		} else {
 			slideshow.removeClass("with-notes");
 		}
 
-		Cookies.set('sidenotes', slideshow.hasClass("with-notes"));
+		// layout reveal once the transition is complete
+		// TODO: make this resizing smooth
+		slideshow.one(
+			'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+    		Reveal.layout
+    	);
+
+		setCookies();
 	}
 
+
 	/*
-	Listen for enter key to toggle notes
+	Allow the user to toggle sidenotes using the enter key
 	*/
-	$(document).keypress(function(e) {
-	  	if(e.which == 13) {
-	  		toggleNotesVisibility();
-	  	}
-	});
+	function onKeypress(event) {
+		if(event.which == 13) 
+			toggleSidenotes();
+	}
+	
 
 }(Reveal));
