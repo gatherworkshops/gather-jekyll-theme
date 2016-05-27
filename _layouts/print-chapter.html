@@ -1,0 +1,37 @@
+---
+bodyclass: chapter
+---
+
+{% include head.html %}
+{% include pagenavigation.html %}
+	
+		
+			
+<div class="page-content">
+
+{% assign slides = page.slides %}
+
+{% for slide in slides %}
+
+
+{{ slide.content | 
+		replace: '[[BASE_URL]]', site.baseurl | 
+		replace: '[[THEME_IMAGES]]', site.theme_images | 
+		replace: '[[COURSE_IMAGES]]', site.course_images | 
+		markdownify }}
+
+<aside class="notes">
+{{ slide.notes | 
+		replace: '[[BASE_URL]]', site.baseurl |
+		markdownify }}
+</aside>
+
+
+{% endfor %}
+
+</div>
+
+
+
+{% include pagefooter.html %}
+{% include foot.html %}
