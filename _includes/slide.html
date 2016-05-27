@@ -1,14 +1,16 @@
 <!-- slide -->
-<section class="{{ slide.class }}"
-		
-	{% if slide.class == 'title-slide' %}
+<section 
+	
+	{% if forloop.index0 == 0 %}
 		id="{{ slide.section }}"
+		class="title-slide"
 		data-background="{{ site.course_images }}/theme/theme-tile.svg" 
 		data-background-color="{{ site.themecolor }}"
 		data-background-size="200px" 
 		data-background-repeat="repeat"
 	{% else %}
 		id="{{ slide.title }}"
+		class="{{ slide.class }}"
 	{% endif %}
 	>
 		
