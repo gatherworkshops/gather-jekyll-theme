@@ -34,6 +34,10 @@
 			color: #DCE3B2;
 			text-shadow: $titleTextShadow;
 		}
+
+		&::before {
+			content: url(#{$assets-url}/images/gw_logo.png);
+		}
 	}
 
 
