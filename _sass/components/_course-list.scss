@@ -1,3 +1,77 @@
+ul.course-list {
+
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+
+	li {
+		width: 25%;
+		min-width: 200px;
+		margin: 10px;
+		border: 1px solid white;
+		border-radius: 3px;
+		overflow: hidden;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+
+		&:hover {
+			box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+		}
+
+		&>a {
+			display: block;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.8);
+			text-decoration: none;
+			
+			color: #666;
+			border-bottom: 5px solid transparent;
+
+			&:hover {
+				border-color: $theme-color-light;
+
+				.title {
+					color: $theme-color-light;
+				}
+				
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.content {
+			padding: 10px 20px;
+			text-align: center;
+		}
+
+		.title {
+			display: block;
+			font-weight: bold;
+			font-size: 1.8em;
+			font-family: "Lunchbox";
+			margin-top: 0.2em;
+		}
+
+		.length {
+			display: block;
+			font-size: 1em;
+			margin-bottom: 0.5em;
+		}
+
+		p{
+			font-size: 0.8em;
+		}
+
+	}
+}
+
+
+
+
+
 /* tile-like list of links to individual chapters and courses */
 .course-links {
 

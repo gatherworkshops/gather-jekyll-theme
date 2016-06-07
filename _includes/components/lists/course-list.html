@@ -1,0 +1,39 @@
+<ul class="course-list">
+    {% for course in page.courses %}
+
+        
+
+
+        {% capture course_url %} 
+            {{ site.baseurl }}/courses/{{ course.name }}
+        {% endcapture %}
+
+        {% capture course_tile_image %}
+            {{ site.baseurl }}/courses/{{ course.name }}/assets/tiles/{{ course.name }}.jpg
+        {% endcapture %}
+
+
+        <li>
+            <a href="{{ course_url }}">
+
+                <img class="header-image" src="{{ course_tile_image }}">
+
+                <div class="content">
+                    <span class="title">{{ course.title }}</span>
+                    <span class="length">{{ course.length }}</span>
+                    <p>{{ course.description }}</p>
+
+                    {% if course.standard %}
+                        <p>AS-{{ course.standard }} | {{ course.credits }} Credits</p>
+                    {% endif %}
+                </div>
+
+            </a>
+        </li>
+
+
+
+
+
+    {% endfor %}
+</ul>
