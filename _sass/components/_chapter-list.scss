@@ -1,0 +1,37 @@
+ol.chapter-list {
+
+	list-style-type: none;
+
+	li {
+
+		width: 60%;
+		min-width: 300px;
+		margin: 10px auto;
+
+		&>a {
+			display: block;
+			border: 1px solid white;
+			border-radius: 3px;
+			background-color: rgba(255, 255, 255, 0.8);
+			padding: 20px;
+			text-decoration: none;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+			color: #666;
+
+			&:hover {
+				background-color: transparentize($theme-color-light, 0.85);
+				border-color: transparentize($theme-color-light, 0.7);
+				color: $theme-color-dark;
+			}
+		}
+
+		.title {
+			display: block;
+			font-weight: bold;
+			font-size: 1.8em;
+			font-family: "Lunchbox";
+			margin: 0.2em 0;
+		}
+	}
+
+}

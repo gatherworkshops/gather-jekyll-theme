@@ -1,13 +1,18 @@
-<div class="row chapter-links">
+<ol class="chapter-list">
+	{% for chapter in page.chapters %}
+		{% if chapter.published != 'false' %}
 
-	<ol class="chapter-list col-md-10 col-md-offset-1">
+	    <li class="chapter-item">
+		    <a href="{{ chapter.name }}.html">
+			    <div class="chapter-info">
 
-	    {% for chapter in page.chapters %}
+			        <h2 class="title">{{ chapter.title }}</h2>
+			        <p>{{ chapter.description }}</p>
 
-	        {% include components/tiles/chapter-item.html %}
+			    </div>
+		    </a>
+		</li>
 
-	    {% endfor %}
-
-	</ol>
-
-</div>
+		{% endif %}
+	{% endfor %}
+</ol>

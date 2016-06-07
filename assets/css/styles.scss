@@ -16,7 +16,7 @@ $theme-color: {{site.themecolor}};
 @import 'lunchbox';
 @import 'bootstrap-customisation';
 @import 'youtube-modal';
-@import 'base';
+@import 'layout/base';
 
 @import 'page-navigation';
 @import 'page-header';
@@ -25,6 +25,8 @@ $theme-color: {{site.themecolor}};
 @import 'course';
 @import 'chapter';
 @import 'feedback';
-@import 'chapter-links';
+
+@import 'components/course-list';
+@import 'components/chapter-list';
 
 
