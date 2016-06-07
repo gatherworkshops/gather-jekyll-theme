@@ -2,9 +2,20 @@
 	{% for chapter in page.chapters %}
 		{% if chapter.published != 'false' %}
 
+
+		{% capture chapter_image %}
+            {{ site.baseurl }}/courses/{{ page.course }}/assets/tiles/{{ chapter.name }}.jpg
+        {% endcapture %}
+
+
 	    <li class="chapter-item">
 		    <a href="{{ chapter.name }}.html">
-			    <div class="chapter-info">
+
+		    	<div class="zoom-badge">
+		    		<div class="inner" style="background-image: url({{ chapter_image }});"></div>
+		    	</div>
+
+			    <div class="content">
 
 			        <h2 class="title">{{ chapter.title }}</h2>
 			        <p>{{ chapter.description }}</p>
