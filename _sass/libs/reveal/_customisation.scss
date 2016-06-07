@@ -1,0 +1,63 @@
+.reveal {
+
+	line-height: 1.4;
+	text-align: left;
+	overflow: hidden;
+
+	// normal paragraphs displayed on a slide
+	.slides > section p {
+		margin-top: 0.4em;
+		margin-bottom: 0.8em;
+	}
+
+	.slides > .present {
+		//border: 1px dotted rgba(255, 0, 0, 0.5);
+		max-height: 768px;
+		overflow: hidden;
+	}
+	
+
+	// inline code within paragraphs
+	code {
+		background-color: rgba(255,255,255,0.6);
+		padding: 6px;
+	}
+
+	.codepen-embed {
+		display: inline-block;
+		box-sizing: border-box;
+		border: 4px solid #222;
+		width: 100%;
+		max-width: 100%;
+
+		&.title {
+			border: 0;
+			color: #FFF;
+			text-align: left;
+			font-size: 50%;
+			font-weight: bold;
+			background-color: #222;
+			padding: 0px 8px;
+			border-top-radius: 5px;
+		}
+	}
+
+	.slides {
+
+		// all slides
+		&>section {
+			box-sizing: border-box;
+		}
+
+		// normal images displayed on a slide
+		&>section img {
+			margin: 0;
+			border: 0 !important;
+			box-shadow: none !important;
+			background: transparent !important;
+		}
+
+	}
+
+}
+

@@ -28,11 +28,11 @@
 	&>.title-slide {
 
 	  	color: #DCE3B2;
-		text-shadow: $titleTextShadow;
+		text-shadow: $heading1TextShadow;
 
 		h1, h2, h3 {
 			color: #DCE3B2;
-			text-shadow: $titleTextShadow;
+			text-shadow: $heading1TextShadow;
 		}
 
 		&::before {

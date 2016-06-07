@@ -11,9 +11,16 @@ $assets-url: '{{site.theme_assets}}';
 $theme-color: {{site.themecolor}};
 
 @import 'theme';
-@import 'revealjs-theme';
-@import 'revealjs-customisation';
-@import 'revealjs-slide-layouts';
-@import 'revealjs-slide-components';
-@import 'prism-customisation';
-@import 'printable-slides';
+
+// base theme for reveal
+@import 'libs/reveal/settings';
+@import "../assets/submodules/revealjs/css/theme/template/theme";
+
+@import 'libs/reveal/customisation';
+@import 'libs/reveal/sidenotes'; // TODO: integrate with sidenotes plugin
+
+@import 'libs/reveal/slide-layouts';
+@import 'libs/reveal/slide-components';
+@import 'libs/reveal/controls';
+
+@import 'libs/prism/prism-customisation';

@@ -1,0 +1,8 @@
+.reveal .controls div {
+
+	opacity: 0.15;
+
+	&.enabled {
+		opacity: 0.8;
+	}
+}

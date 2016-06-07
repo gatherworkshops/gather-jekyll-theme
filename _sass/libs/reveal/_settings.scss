@@ -1,0 +1,34 @@
+// Override theme settings -----------------
+// (see ../template/settings.scss)
+
+// Background of the presentation
+$backgroundColor: #F3F3DA;
+
+// Primary/body text
+$mainFont: 'Karla', sans-serif;
+$mainFontSize: 1.75em;
+$mainColor: #001E39;
+
+// Headings
+$headingMargin: 0 0 20px 0;
+$headingFont: 'Lunchbox', 'Karla', sans-serif;
+$headingColor: #001E39;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: auto;
+$headingTextTransform: none;
+$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
+$heading1TextShadow: 2px 2px 1px darken($theme-color, 20%);;
+
+// Links and actions
+$linkColor: #efad5f;
+$linkColorHover: lighten( $linkColor, 10% );
+
+// Text selection
+$selectionBackgroundColor: #FF5E99;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+	background: $backgroundColor;
+}

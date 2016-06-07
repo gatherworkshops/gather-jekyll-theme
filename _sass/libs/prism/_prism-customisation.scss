@@ -1,4 +1,40 @@
 pre[class*="language-"] {
+
+	font-size: 24px;
+	padding: 20px 0;
+	margin-bottom: 1em;
+
+
+	// don't let the code sit right against the edges
+	// of the pre block
+	code {
+		background-color: transparent;
+		padding: 0 10px;
+	}
+
+
+	&[data-line] {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	// add a transparent white overlay to "fade out" 
+	// all highlighted lines.
+	.line-highlight {
+		background: rgba(white, .7);
+
+		&::before,
+		&[data-end]::before,
+		&[data-end]::after {
+			content: "";
+		}
+	}
+
+}
+
+
+
+/*pre[class*="language-"] {
 	width: 100%;
 	padding: 20px 0;
 	margin-bottom: 1em;
@@ -32,11 +68,7 @@ pre[class*="language-"] {
 		margin: 0 auto;
 	}
 
-	// don't let the code sit right against the edges
-	// of the pre block
-	code {
-		padding: 0 10px;
-	}
+	
 
 	// prism prevents top and bottom padding on blocks
 	// which use line numbering or highlighting, but we
@@ -46,17 +78,7 @@ pre[class*="language-"] {
 		padding-bottom: inherit;
 	}
 
-	// add a transparent white overlay to "fade out" 
-	// all highlighted lines.
-	.line-highlight {
-		background: rgba(white, .7);
-
-		&::before,
-		&[data-end]::before,
-		&[data-end]::after {
-			content: "";
-		}
-	}
+	
 
 	// used for the rare cases where we want to show
 	// students which lines to delete
@@ -65,3 +87,4 @@ pre[class*="language-"] {
 		background: rgba(255, 0, 0, 0.1);
 	}
 }
+*/
