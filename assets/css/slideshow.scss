@@ -1,0 +1,19 @@
+---
+---
+
+/*
+Extra styling only included on pages 
+which have a revealJS slideshow.
+*/
+
+$baseurl: '{{site.baseurl}}';
+$assets-url: '{{site.theme_assets}}';
+$theme-color: {{site.themecolor}};
+
+@import 'theme';
+@import 'revealjs-theme';
+@import 'revealjs-customisation';
+@import 'revealjs-slide-layouts';
+@import 'revealjs-slide-components';
+@import 'prism-customisation';
+@import 'printable-slides';

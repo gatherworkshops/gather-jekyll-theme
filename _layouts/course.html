@@ -1,13 +1,13 @@
 {% assign bodyclass = "course-page" %}
 
 
-{% include head.html %}
-{% include pagenavigation.html %}
+{% include layout/head.html %}
+{% include layout/pagenavigation.html %}
 
 
 <div class="page-content">
 
-	{% include pageheader.html %}
+	{% include layout/pageheader.html %}
 	
 
 	<div class="container">
@@ -17,7 +17,7 @@
 
 			    {% for chapter in page.chapters %}
 
-			        {% include chapter-item.html %}
+			        {% include components/tiles/chapter-item.html %}
 
 			    {% endfor %}
 
@@ -27,12 +27,12 @@
 	</div>
 
 
-	{% include pagefooter.html %}
+	{% include layout/pagefooter.html %}
 
 </div><!-- .page-content -->
 
 
-{% include foot.html %}
+{% include layout/foot.html %}
 
 
 

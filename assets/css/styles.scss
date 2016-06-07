@@ -1,14 +1,14 @@
 ---
 ---
 
-// theme stuff
+/*
+Base styling applied to every page
+in the website.
+*/
 
 $baseurl: '{{site.baseurl}}';
 $assets-url: '{{site.theme_assets}}';
 $theme-color: {{site.themecolor}};
-
-
-// other files to include
 
 @import 'theme';
 @import 'mixins';
@@ -26,12 +26,5 @@ $theme-color: {{site.themecolor}};
 @import 'chapter';
 @import 'feedback';
 @import 'chapter-links';
-
-@import 'revealjs-theme';
-@import 'revealjs-customisation';
-@import 'revealjs-slide-layouts';
-@import 'revealjs-slide-components';
-@import 'prism-customisation';
-@import 'printable-slides';
 
 

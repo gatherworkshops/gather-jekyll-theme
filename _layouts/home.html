@@ -1,15 +1,15 @@
 ---
 
 ---
-	{% include head.html %}
-	{% include pagenavigation.html %}
+{% include layout/head.html %}
+{% include layout/pagenavigation.html %}
 
-	<div class="page-content">
-	
-	{% include pageheader.html %}
-	{{ content }}
-	{% include pagefooter.html %}
+<div class="page-content">
 
-	</div><!-- .page-content -->
+{% include layout/pageheader.html %}
+{{ content }}
+{% include layout/pagefooter.html %}
 
-	{% include foot.html %}
+</div><!-- .page-content -->
+
+{% include layout/foot.html %}

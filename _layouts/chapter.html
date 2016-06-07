@@ -2,22 +2,22 @@
 bodyclass: chapter
 ---
 
-{% include head.html %}
-{% include pagenavigation.html %}
+{% include layout/head.html %}
+{% include layout/pagenavigation.html %}
 	
 		
 			
 <div class="page-content">
 
 {% assign slides = page.slides %}
-{% include slideshow.html %}
+{% include components/slideshow/slideshow.html %}
 {{ content }}
 
 </div>
 
 
 
-		{% include revealjs-config.html %}
+		{% include config/revealjs-config.html %}
 
 		<script>
 
