@@ -6,9 +6,37 @@
 
 <div class="page-content">
 
-{% include layout/pageheader.html %}
+
+
+
+<!-- display slideshow if there is one (when on a chapter page) -->
+{% if page.slides %}
+	{% assign slides = page.slides %}
+	{% include components/slideshow/slideshow.html %}
+{% endif %}
+
+
+<!-- display a fat page header if there is one (home page, course page) -->
+{% if page.heading %}
+	{% include layout/pageheader.html %}
+{% endif %}
+
+
+<!-- display page content -->
+<div class="container">
 {{ content }}
+</div><!-- .container -->
+
+
+<!-- list chapters if there are any (when on a course page) -->
+{% if page.chapters %}
+	{% include components/chapter-list/chapter-list.html %}
+{% endif %}
+
+
 {% include layout/pagefooter.html %}
+
+
 
 </div><!-- .page-content -->
 

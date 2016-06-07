@@ -54,6 +54,20 @@
 			slide.children().css('zoom', Reveal.getScale());
 		}
 	});
+
+
+	// checkpoints are able to be clicked to go to the next slide.
+	// when clicked they also visibly update to a green style.
+	$(document).ready( function() {
+		Reveal.addEventListener( 'ready', function( event ) {
+			
+			$('.checkpoint').click( function(){
+				$(this).addClass('checked');
+				setTimeout( Reveal.next, 1000 );
+			});
+
+		});
+	});
 		
 
 </script>

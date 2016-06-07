@@ -1,0 +1,18 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ site.baseurl }}/theme/assets/submodules/jquery/jquery-1.11.2.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ site.baseurl }}/theme/assets/submodules/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Prism code highlighter -->
+<script src="{{ site.baseurl }}/theme/assets/submodules/prism/prism.js"></script>
+
+<!-- only include dropdown navbar if there is a slideshow on the page -->
+{% if page.chapters or page.slides %}
+	<script src="{{ site.baseurl }}/theme/assets/js/navbar.js"></script>
+{% endif %}
+
+<!-- only include revealJS if there is a slideshow on the page -->
+{% if page.slides %}
+	{% include config/reveal.html %}
+{% endif %}
