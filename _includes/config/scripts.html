@@ -7,6 +7,10 @@
 <!-- Prism code highlighter -->
 <script src="{{ site.baseurl }}/theme/assets/submodules/prism/prism.js"></script>
 
+<!-- Firebase User Login -->
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script src="{{ site.baseurl }}/theme/assets/submodules/firebase/firebase.js"></script>
+
 <!-- only include dropdown navbar if there is a slideshow on the page -->
 {% if page.chapters or page.slides %}
 	<script src="{{ site.baseurl }}/theme/assets/js/navbar.js"></script>
@@ -16,3 +20,31 @@
 {% if page.slides %}
 	{% include config/reveal.html %}
 {% endif %}
+
+<script>
+	var firebaseConfig = {
+		
+		apiKey: "AIzaSyDcQJQXZ9Vxx2qh1f3huZ0naTwpvdfUiEc",
+		authDomain: "gather-workshops.firebaseapp.com",
+		databaseURL: "https://gather-workshops.firebaseio.com",
+		storageBucket: "gather-workshops.appspot.com",
+
+		onLogin: function(){
+			$('.user-badge').show();
+			$('.sign-in-button').hide();
+
+			$('#usernameHeaderField .username').html(Firebase.user.displayName);
+			$('#firebaseLogout').click(Firebase.signOut);
+		},
+
+		onLogout: function(){
+			$('.user-badge').hide();
+			$('.sign-in-button').show();
+
+			$('#usernameHeaderField .username').html('Logged Out');
+		}
+	}
+
+	Firebase.init(firebaseConfig);
+
+</script>
